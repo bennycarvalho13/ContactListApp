@@ -26,7 +26,7 @@ export const EditContact = () => {
 				<label className="ms-2 mt-2 h6" htmlFor="phone">Phone</label>
 				<input type="text"  onChange={(p) => phone = p.target.value} id="phone" className="form-control m-2" placeholder={store.editPhone} />
 				<label className="ms-2 mt-2 h6" htmlFor="address">Address</label>
-				<input type="text" onChange={(a) => address = a.target.value} id="address" className="form-control m-2" placeholder={store.Address} />
+				<input type="text" onChange={(a) => address = a.target.value} id="address" className="form-control m-2" placeholder={store.editAddress} />
 				</ul>
 			<button className="btn bg-primary text-light ms-2 w-100" onClick={() => 
 				{
@@ -42,7 +42,7 @@ export const EditContact = () => {
 						store.editName = name;
 						storestore.editEmail = email;
 						store.editPhone = phone;
-						store.Address = address;
+						store.editAddress = address;
 					}
 				}
 			}>Save</button>
