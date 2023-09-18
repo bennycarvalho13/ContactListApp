@@ -38,7 +38,7 @@ export const AddContact = () => {
 					}
 				}
 			}>add a new Contact</button>
-			<Link className="ms-2" to="/" onClick={() => actions.updateContactList()}>
+			<Link className="ms-2" to="/" onClick={() => {actions.updateContactList()}}>
 				or get back to contacts
 			</Link>
 		</div>

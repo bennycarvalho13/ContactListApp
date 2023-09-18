@@ -14,7 +14,6 @@ export const EditContact = () => {
     let address = "";
 
 	const { store, actions } = useContext(Context);
-	
 	return (
 		<div className="container">
 			<ul className="list-group m-0 p-3">
@@ -38,7 +37,7 @@ export const EditContact = () => {
 					}
 				}
 			}>Save</button>
-			<Link className="ms-2" to="/" onClick={() => actions.updateContactList()}>
+			<Link className="ms-2" to="/" onClick={() => {actions.updateContactList()}}>
 				or get back to contacts
 			</Link>
 		</div>

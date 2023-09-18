@@ -14,8 +14,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			contacts: [],
-
-			editId : []
+			editId : [],
+			editName : [],
+			editPhone : [],
+			editAddress : [],
+			editEmail : []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -70,8 +73,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}),
 				})
 					.then(resp => {
-						if(resp.ok){
-							alert('Contact Added Succesfully');
+						if(!resp.ok){
+							alert('something went Wrong');
 						 }
 						return resp.json();
 					})
@@ -98,6 +101,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}),
 				})
 					.then(resp => {
+						if(!resp.ok){
+							alert('something went Wrong');
+						 }
 						return resp.json();
 					})
 					.then(data => {
