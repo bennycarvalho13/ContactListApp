@@ -22,7 +22,7 @@ export const Home = () => {
 			</div>
 			<div className="col-1 offset-lg-3 px-1">
 			<button type="button" className="btn" data-bs-toggle="modal" onClick={() => {deleteID = c.id}} data-bs-target="#exampleModal"><i className="fa-solid fa-trash-can fa-lg"></i></button>
-				<Link to="/editcontact"><button className="btn" onClick={() => {store.editId = c.id; store.editName = c.name; store.editPhone = c.phone; store.editAddress = c.address; store.editEmail = c.email}} ><i className="fa-solid fa-pencil  fa-lg"></i></button>
+				<Link to="/editcontact"><button className="btn" onClick={() => {store.editId = c.id; store.editName = c.full_name; store.editPhone = c.phone; store.editAddress = c.address; store.editEmail = c.email}} ><i className="fa-solid fa-pencil  fa-lg"></i></button>
 				</Link>
 			</div>
 		</div>
@@ -49,7 +49,7 @@ export const Home = () => {
       </div>
       <div className="modal-footer">
         <button className="btn btn-primary" data-bs-dismiss="modal">Oh no!</button>
-        <button className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {actions.deleteContact(deleteID); deleteID = 0}}>Yes baby!</button>
+        <button className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {actions.deleteContact(deleteID); deleteID = 0; store.editName = "Full Name"; store.editPhone = "Phone"; store.editAddress = "Address"; store.editEmail = "Email"}}>Yes baby!</button>
       </div>
     </div>
   </div>
