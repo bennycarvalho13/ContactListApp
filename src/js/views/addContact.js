@@ -17,19 +17,29 @@ export const AddContact = () => {
 
 	return (
 		<div className="container">
-			<ul className="list-group">
-                <h1>Add a new Contact Here</h1>
-  					<input type="text" onChange={(n) => name = n.target.value } id="name" className="form-control" placeholder="Full Name"/>
-					<input type="text" onChange={(e) => email =e.target.value } id="email"	className="form-control" placeholder="Email"/>
-					<input type="text" onChange={(p) => phone =p.target.value } id="phone" className="form-control" placeholder="Phone"/>
-					<input type="text" onChange={(a) => address =a.target.value } id="address" className="form-control" placeholder="Address"/>
-                <button className="btn bg-primary" onClick={() => {if (name.trim() === "" || email.trim() === ""|| phone.trim() === "" || address.trim() === "") {
-			alert("Input cannot be empty");
-		} else{actions.addContact(name, email, phone, address); document.getElementById('address').value = ''; document.getElementById('name').value = ''; document.getElementById('email').value = '';document.getElementById('phone').value = ''}}}>Click Here To add a new Contact</button>
+			<ul className="list-group m-0 p-3">
+				<h1 className="text-center">Add a new Contact</h1>
+				<label className="ms-2 mt-2 h6" htmlFor="name">Full Name</label>
+				<input type="text" onChange={(n) => name = n.target.value} id="name" className="form-control m-2" placeholder="Full Name" />
+				<label className="ms-2 mt-2 h6" htmlFor="email">Email</label>
+				<input type="text" onChange={(e) => email = e.target.value} id="email" className="form-control m-2" placeholder="Email" />
+				<label className="ms-2 mt-2 h6" htmlFor="phone">Phone</label>
+				<input type="text" onChange={(p) => phone = p.target.value} id="phone" className="form-control m-2" placeholder="Phone" />
+				<label className="ms-2 mt-2 h6" htmlFor="address">Address</label>
+				<input type="text" onChange={(a) => address = a.target.value} id="address" className="form-control m-2" placeholder="Address" />
 			</ul>
-			<br />
-			<Link to="/">
-				<button className="btn btn-primary"onClick={() => actions.updateContactList()} >Back home</button>
+				<button className="btn bg-primary text-light ms-2 w-100" onClick={() => 
+				{
+					if (name.trim() === "" || email.trim() === "" || phone.trim() === "" || address.trim() === "")
+					{
+						alert("Input cannot be empty");
+					} else {
+						actions.addContact(name, email, phone, address); document.getElementById('address').value = ''; document.getElementById('name').value = ''; document.getElementById('email').value = ''; document.getElementById('phone').value = '' 
+					}
+				}
+			}>add a new Contact</button>
+			<Link className="ms-2" to="/" onClick={() => actions.updateContactList()}>
+				or get back to contacts
 			</Link>
 		</div>
 	);
