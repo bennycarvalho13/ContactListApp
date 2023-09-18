@@ -37,7 +37,7 @@ export const AddContact = () => {
 						actions.addContact(name, email, phone, address); document.getElementById('address').value = ''; document.getElementById('name').value = ''; document.getElementById('email').value = ''; document.getElementById('phone').value = '' 
 					}
 				}
-			}>add a new Contact</button>
+			}>add Contact</button>
 			<Link className="ms-2" to="/" onClick={() => {actions.updateContactList()}}>
 				or get back to contacts
 			</Link>
