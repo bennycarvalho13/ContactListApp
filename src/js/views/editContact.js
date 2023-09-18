@@ -8,10 +8,10 @@ import { number } from "prop-types";
 
 export const EditContact = () => {
 
-	let name = "";
-	let email = "";
-	let phone = "";
-    let address = "";
+	let name;
+	let email;
+	let phone;
+    let address;
 
 	const { store, actions } = useContext(Context);
 
@@ -34,15 +34,15 @@ export const EditContact = () => {
 					{
 						alert("Input cannot be empty");
 					} else {
+						store.editName = name;
+						store.editEmail = email;
+						store.editPhone = phone;
+						store.editAddress = address;
 						actions.editContact(name, email, phone, address, store.editId);
 						document.getElementById('address').value = '';
 						document.getElementById('name').value = '';
 						document.getElementById('email').value = '';
 						document.getElementById('phone').value = '';
-						store.editName = name;
-						storestore.editEmail = email;
-						store.editPhone = phone;
-						store.editAddress = address;
 					}
 				}
 			}>Save</button>
