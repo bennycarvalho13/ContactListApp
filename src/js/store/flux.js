@@ -69,6 +69,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 									"phone":`123456871`
 								}),
 						})
+						.then(resp => {
+							if(!resp.ok){
+								alert('something went Wrong');
+							 }
+							return resp.json();
+						})
+						.then(data => {
+							console.log(data);
+						})
+						.catch(error => {
+							console.log(error);
+						});
 
 					});
 			},
