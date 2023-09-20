@@ -11,16 +11,16 @@ export const Home = () => {
 	const listItems = store.contacts.map((c,index) => 
 	<li key={index} className="list-group-item">
 		<div className="row p-2">
-			<div className="col-1 m-4">
+			<div className="col-2 mt-2 ms-5">
 			<img src="https://picsum.photos/100" className="rounded-circle" alt="image"/>
 			</div>
-			<div className="col-6 ms-3 p-1">
+			<div className="col-6 p-1">
 				<p className="h4">{c.full_name}</p>
 				<div className="text-secondary"><i className="fa-solid fa-location-dot me-3"></i>{c.address}</div>
 				<div className="text-secondary"><i className="fa-solid fa-phone-flip me-3"></i>{c.phone}</div>
 				<div className="text-secondary"><i className="fa-solid fa-envelope me-3"></i>{c.email}</div>
 			</div>
-			<div className="col-1 offset-lg-3 px-1">
+			<div className="col-1 offset-md-2 px-1">
 			<button type="button" className="btn" data-bs-toggle="modal" onClick={() => {deleteID = c.id}} data-bs-target="#exampleModal"><i className="fa-solid fa-trash-can fa-lg"></i></button>
 				<Link to="/editcontact"><button className="btn" onClick={() => {store.editId = c.id; store.editName = c.full_name; store.editPhone = c.phone; store.editAddress = c.address; store.editEmail = c.email}} ><i className="fa-solid fa-pencil  fa-lg"></i></button>
 				</Link>
