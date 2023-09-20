@@ -8,11 +8,13 @@ export const Home = () => {
 
 	let deleteID = 0;
 
+	let imageSource = "https://picsum.photos/id/1/100";
+
 	const listItems = store.contacts.map((c,index) => 
 	<li key={index} className="list-group-item">
 		<div className="row p-2">
 			<div className="col-2 mt-2 ms-5">
-			<img src="https://picsum.photos/100" className="rounded-circle" alt="image"/>
+			<img src={imageSource = `https://picsum.photos/id/${Math.floor(Math.random() *(50 - 1 + 1) + 1)}/100`} className="img-fluid rounded-circle" alt="image"/>
 			</div>
 			<div className="col-6 p-1">
 				<p className="h4">{c.full_name}</p>
