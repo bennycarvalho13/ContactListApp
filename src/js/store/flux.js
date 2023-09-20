@@ -55,6 +55,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => {
 						console.log(error);
+						fetch(`https://playground.4geeks.com/apis/fake/contact/`, {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json"
+							},
+							body: JSON.stringify(
+								{
+									"full_name": `Benny Oliveira`,
+									"email": `bennyoiveira@gmail.com`,
+									"agenda_slug": "benny",
+									"address":`5th Avenue, New York, NY, USA`,
+									"phone":`123456871`
+								}),
+						})
+
 					});
 			},
 			addContact: (name, email, phone, address) => {
